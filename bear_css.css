@@ -1,0 +1,238 @@
+body {
+    background-color: aquamarine;
+}
+
+body,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.wraper {
+    width: 500px;
+    height: 500px;
+    margin: 250px auto 0;
+}
+
+.total {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.ears {
+    position: absolute;
+    display: flex;
+    gap: 160px;
+}
+
+.ears .ears-left,
+.ears .ears-right {
+    width: 170px;
+    height: 147px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 90px;
+}
+
+.pink {
+    width: 76px;
+    height: 74px;
+    background-color: pink;
+    margin: 45px auto 28px;
+    border-radius: 90px;
+}
+
+/* 얼굴 */
+.face {
+    top: 5%;
+    position: absolute;
+    width: 500px;
+    height: 450px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 5px 10px 10px 0 rgb(79, 77, 77);
+    border-radius: 482px;
+}
+
+/* 눈 */
+.eye {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+.eye-left,
+.eye-right {
+    margin-top: 160px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+
+.eye-pot {
+    width: 10px;
+    height: 15px;
+    background-color: rgb(187, 180, 180);
+    border-radius: 10px 10px 10px;
+    margin: 50% auto;
+}
+
+/* 코 */
+.nose {
+    margin-top: 29px;
+    width: 98px;
+    height: 47px;
+    background-color: black;
+    border-radius: 23.5px;
+    margin: auto;
+}
+
+/* 코선 */
+
+.noseline {
+    display: flex;
+    height: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 코밑에 선 표시 */
+.line {
+    align-items: center;
+    height: 82px;
+    width: 3px;
+    background-color: black;
+}
+
+/* 입 */
+.mouth {
+    height: 3px;
+    width: 150px;
+    background-color: black;
+    margin: auto;
+}
+
+/* 혀 */
+.tongue {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    background-color: red;
+    border-radius: 0 0 50% 50%;
+    margin: auto;
+}
+
+.tongue-line {
+    width: 1px;
+    background-color: rgb(178, 30, 17);
+}
+
+/* 얼굴 (홍조) 표현 */
+.impress-red {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    gap: 300px;
+    justify-content: center;
+    top: 55%;
+}
+
+.left-red,
+.right-red {
+    text-align: center;
+    width: 50px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+
+
+/* 귀 두쪽 상시 동작하는 애니메이션 */
+.ears-left {
+    animation: vibrate-ear-left 2s infinite alternate-reverse;
+}
+
+.ears-right {
+    animation: vibrate-ear-right 2s infinite alternate-reverse;
+}
+
+@keyframes vibrate-ear-left {
+    from {
+        transform: rotate(45deg);
+    }
+
+    to {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes vibrate-ear-right {
+    from {
+        transform: rotate(-45deg);
+    }
+
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+/* 볼 홍조 표현 */
+.total:hover .impress-red div {
+    animation: effect-red 5s infinite;
+}
+
+@keyframes effect-red {
+    from {
+        background-color: white;
+        color: white;
+    }
+
+    to {
+        color: white;
+        background-color: rgba(246, 89, 133, 0.8);
+    }
+}
+
+/* 혀 내밀기 기능 */
+.total:hover .tongue,
+.total:hover .tongue .tongue-line {
+    animation: effect-tongue 1s;
+    animation-fill-mode: forwards;
+    /* forwards로 마지막 결과값 유지 */
+}
+
+@keyframes effect-tongue {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 60px;
+    }
+}
+
+/* 이미지에 hover시, 애니메이션 효과 */
+.total:hover {
+    animation: effect-size 2s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes effect-size {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    80% {
+        transform: rotate(-360deg);
+        scale: 2;
+    }
+
+    100% {
+        transform: rotate(1080deg);
+        scale: 0;
+    }
+}
