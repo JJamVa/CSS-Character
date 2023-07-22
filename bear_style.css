@@ -1,5 +1,6 @@
 body {
-    background-color: aquamarine;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    background-repeat: no-repeat;
 }
 
 body,
@@ -10,7 +11,7 @@ div {
 
 .wraper {
     width: 500px;
-    height: 500px;
+    height: 1000px;
     margin: 250px auto 0;
 }
 
@@ -74,7 +75,7 @@ div {
 .eye-pot {
     width: 10px;
     height: 15px;
-    background-color: rgb(187, 180, 180);
+    background-color: rgb(194, 190, 190);
     border-radius: 10px 10px 10px;
     margin: 50% auto;
 }
@@ -101,7 +102,7 @@ div {
 
 /* 코밑에 선 표시 */
 .line {
-    align-items: center;
+    letter-spacing: -0.88px;
     height: 82px;
     width: 3px;
     background-color: black;
@@ -125,13 +126,15 @@ div {
     margin: auto;
 }
 
+/* 혀 선 */
 .tongue-line {
-    width: 1px;
+    width: 2px;
     background-color: rgb(178, 30, 17);
 }
 
 /* 얼굴 (홍조) 표현 */
 .impress-red {
+    letter-spacing: -0.88px;
     width: 100%;
     position: absolute;
     display: flex;
@@ -181,6 +184,7 @@ div {
 
 /* 볼 홍조 표현 */
 .total:hover .impress-red div {
+    letter-spacing: -0.88px;
     animation: effect-red 5s infinite;
 }
 
@@ -199,6 +203,7 @@ div {
 /* 혀 내밀기 기능 */
 .total:hover .tongue,
 .total:hover .tongue .tongue-line {
+    letter-spacing: -0.88px;
     animation: effect-tongue 1s;
     animation-fill-mode: forwards;
     /* forwards로 마지막 결과값 유지 */
